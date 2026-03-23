@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Diabetes Pro Management</title>
+    
+    <link rel="manifest" href="manifest.json">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#121212">
+    
+    <style>
+        body { 
+            font-family: -apple-system, system-ui, sans-serif; 
+            background: #121212; 
+            color: white; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            padding: 30px 15px; 
+            margin: 0; 
+        }
+        h1 { color: #5dade2; margin-bottom: 5px; font-size: 24px; }
+        .subtitle { color: #888; font-size: 13px; margin-bottom: 25px; }
+        
+        .grid { 
+            display: grid; 
+            grid-template-columns: 1fr; 
+            gap: 12px; 
+            width: 100%; 
+            max-width: 400px; 
+        }
+        
+        .nav-button { 
+            background: #1e1e1e; 
+            border: 1px solid #333; 
+            color: white; 
+            padding: 15px; 
+            border-radius: 12px; 
+            text-decoration: none; 
+            display: flex; 
+            align-items: center; 
+            transition: 0.2s;
+        }
+        
+        .nav-button:active { transform: scale(0.97); background: #252525; }
+
+        .btn-bolus { border-left: 5px solid #9b59b6; }
+        .btn-basal { border-left: 5px solid #3498db; }
+        .btn-keto { border-left: 5px solid #e74c3c; }
+        .btn-cortison { border-left: 5px solid #f39c12; }
+        .btn-hba1c { border-left: 5px solid #2ecc71; }
+        .btn-fpe { border-left: 5px solid #f1c40f; }
+        .btn-sport { border-left: 5px solid #2980b9; }
+
+        .icon { 
+            margin-right: 15px; 
+            font-size: 22px; 
+            background: #2c2c2c; 
+            padding: 8px; 
+            border-radius: 10px; 
+            width: 32px; 
+            text-align: center; 
+        }
+
+        .btn-title { font-size: 16px; font-weight: bold; display: block; }
+        .btn-desc { font-size: 11px; color: #666; }
+
+        .disclaimer-box { 
+            max-width: 400px; 
+            margin-top: 30px; 
+            padding: 15px; 
+            background: rgba(255,255,255,0.03); 
+            border: 1px solid #333; 
+            border-radius: 10px; 
+            font-size: 11px; 
+            color: #888; 
+            text-align: center;
+            line-height: 1.4;
+        }
+
+        .footer { margin-top: 20px; color: #333; font-size: 10px; }
+    </style>
+</head>
+<body>
+
+    <h1>Diabetes Pro</h1>
+    <div class="subtitle">Therapie-Management Tools</div>
+
+    <div class="grid">
+        <a href="bolus-rechner.html" class="nav-button btn-bolus">
+            <span class="icon">💉</span>
+            <div class="btn-text">
+                <span class="btn-title">Bolus-Rechner</span>
+                <span class="btn-desc">Mahlzeiten & Korrektur</span>
+            </div>
+        </a>
+
+        <a href="basal-rechner.html" class="nav-button btn-basal">
+            <span class="icon">📊</span>
+            <div class="btn-text">
+                <span class="btn-title">Basal-Anpassung</span>
+                <span class="btn-desc">Optimierung nach TDD</span>
+            </div>
+        </a>
+
+        <a href="keto-plan.html" class="nav-button btn-keto">
+            <span class="icon">⚠️</span>
+            <div class="btn-text">
+                <span class="btn-title">Ketoazidose-Plan</span>
+                <span class="btn-desc">Notfall-Schema bei Aceton</span>
+            </div>
+        </a>
+
+        <a href="cortison-schema.html" class="nav-button btn-cortison">
+            <span class="icon">💊</span>
+            <div class="btn-text">
+                <span class="btn-title">Cortison-Schema</span>
+                <span class="btn-desc">Anpassung nach Dr. Teupe</span>
+            </div>
+        </a>
+
+        <a href="hba1c-rechner.html" class="nav-button btn-hba1c">
+            <span class="icon">🔄</span>
+            <div class="btn-text">
+                <span class="btn-title">HbA1c & GMI Rechner</span>
+                <span class="btn-desc">Laborwert-Schätzung</span>
+            </div>
+        </a>
+
+        <a href="fpe-rechner.html" class="nav-button btn-fpe">
+            <span class="icon">🥩</span>
+            <div class="btn-text">
+                <span class="btn-title">FPE-Rechner</span>
+                <span class="btn-desc">Fett-Protein-Einheiten</span>
+            </div>
+        </a>
+
+        <a href="sport-planer.html" class="nav-button btn-sport">
+            <span class="icon">🏃</span>
+            <div class="btn-text">
+                <span class="btn-title">Sport-Planer</span>
+                <span class="btn-desc">KH & TBR Empfehlungen</span>
+            </div>
+        </a>
+    </div>
+
+    <div class="disclaimer-box">
+        <strong>Medizinischer Haftungsausschluss:</strong><br>
+        Diese App dient nur zur Information. Berechnungen sind unverbindliche Schätzungen. Änderungen der Therapie müssen zwingend mit einem Arzt besprochen werden.
+    </div>
+
+    <div class="footer">Build v2.6 | patrick2305blume-eng</div>
+
+</body>
+</html>
