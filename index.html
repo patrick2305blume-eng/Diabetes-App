@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes Management App</title>
+    <style>
+        body { font-family: -apple-system, system-ui, sans-serif; background: #121212; color: white; margin: 0; padding: 20px; display: flex; flex-direction: column; align-items: center; }
+        h1 { color: #5dade2; font-size: 26px; margin-bottom: 5px; text-align: center; }
+        .subtitle { color: #888; font-size: 14px; margin-bottom: 30px; text-align: center; }
+        .grid { display: grid; grid-template-columns: 1fr; gap: 15px; width: 100%; max-width: 400px; }
+        .nav-button { 
+            background: #1e1e1e; border: 1px solid #333; color: white; padding: 18px; border-radius: 15px; 
+            text-decoration: none; display: flex; align-items: center; transition: 0.2s; 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+        .nav-button:active { transform: scale(0.98); background: #252525; }
+        .icon { font-size: 24px; margin-right: 15px; background: #2c2c2c; padding: 10px; border-radius: 12px; width: 35px; text-align: center; }
+        .btn-text { display: flex; flex-direction: column; }
+        .btn-title { font-size: 17px; font-weight: bold; }
+        .btn-desc { font-size: 12px; color: #666; }
+        
+        .btn-bolus { border-left: 5px solid #9b59b6; }
+        .btn-basal { border-left: 5px solid #3498db; }
+        .btn-keto { border-left: 5px solid #e74c3c; }
+        .btn-cortison { border-left: 5px solid #f39c12; }
+        .btn-hba1c { border-left: 5px solid #2ecc71; }
+
+        .medical-disclaimer { 
+            max-width: 400px; margin-top: 30px; padding: 15px; border: 1px solid #444; 
+            border-radius: 10px; font-size: 11px; color: #888; line-height: 1.4; text-align: center; background: rgba(255,255,255,0.02);
+        }
+        .footer { margin-top: 20px; font-size: 10px; color: #444; }
+    </style>
+</head>
+<body>
+
+    <h1>Diabetes Pro</h1>
+    <div class="subtitle">Persönliche Therapie-Management Tools</div>
+
+    <div class="grid">
+        <a href="bolus-rechner.html" class="nav-button btn-bolus">
+            <span class="icon">💉</span>
+            <div class="btn-text"><span class="btn-title">Bolus-Rechner</span><span class="btn-desc">Korrektur & Mahlzeiten</span></div>
+        </a>
+
+        <a href="basal-rechner.html" class="nav-button btn-basal">
+            <span class="icon">📊</span>
+            <div class="btn-text"><span class="btn-title">Basal-Anpassung</span><span class="btn-desc">TDD-basierte Optimierung</span></div>
+        </a>
+
+        <a href="keto-plan.html" class="nav-button btn-keto">
+            <span class="icon">⚠️</span>
+            <div class="btn-text"><span class="btn-title">Ketoazidose-Plan</span><span class="btn-desc">Notfall-Schema & Ketone</span></div>
+        </a>
+
+        <a href="cortison-schema.html" class="nav-button btn-cortison">
+            <span class="icon">💊</span>
+            <div class="btn-text"><span class="btn-title">Cortison-Schema</span><span class="btn-desc">Schema nach Dr. Teupe</span></div>
+        </a>
+
+        <a href="hba1c-rechner.html" class="nav-button btn-hba1c">
+            <span class="icon">🔄</span>
+            <div class="btn-text"><span class="btn-title">HbA1c & GMI</span><span class="btn-desc">Laborwert-Schätzung</span></div>
+        </a>
+    </div>
+
+    <div class="medical-disclaimer">
+        <strong>Medizinischer Haftungsausschluss:</strong><br>
+        Diese App dient ausschließlich Informationszwecken und ersetzt keine ärztliche Diagnose oder Behandlung. Alle Berechnungen sind unverbindliche Empfehlungen. Besprechen Sie alle Therapieänderungen zwingend mit Ihrem Arzt. Die Nutzung erfolgt auf eigene Verantwortung.
+    </div>
+
+    <div class="footer">v2.5 Build | GitHub Pages Hosting</div>
+
+</body>
+</html>
