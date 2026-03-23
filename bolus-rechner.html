@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bolus-Rechner</title>
+    <style>
+        body { font-family: -apple-system, system-ui, sans-serif; background: #121212; color: white; padding: 15px; }
+        .container { max-width: 500px; margin: auto; background: #1e1e1e; padding: 20px; border-radius: 15px; border-left: 5px solid #9b59b6; }
+        .back-link { text-decoration: none; color: #5dade2; display: inline-block; margin-bottom: 15px; font-size: 14px; }
+        h2 { color: #9b59b6; margin-top: 0; }
+        .input-group { margin-bottom: 12px; }
+        label { display: block; font-size: 13px; margin-bottom: 5px; color: #aaa; }
+        input { width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #444; background: #2c2c2c; color: white; box-sizing: border-box; font-size: 16px; }
+        .result-box { margin-top: 20px; padding: 20px; background: #9b59b622; border: 1px solid #9b59b6; border-radius: 10px; text-align: center; display: none; }
+        .val { font-size: 32px; font-weight: bold; color: #9b59b6; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">← Zurück</a>
+        <h2>💉 Bolus-Rechner</h2>
+        <div class="input-group"><label>Aktueller BZ (mg/dl):</label><input type="number" id="bz" oninput="calc()"></div>
+        <div class="input-group"><label>Ziel-BZ:</label><input type="number" id="ziel" value="100" oninput="calc()"></div>
+        <div class="input-group"><label>Korrekturfaktor (KF):</label><input type="number" id="kf" oninput="calc()"></div>
+        <div class="input-group"><label>Kohlenhydrate (BE/KE):</label><input type="number" id="be" oninput="calc()"></div>
+        <div class="input-group"><label>BE-Faktor:</label><input type="number" id="bef" oninput="calc()"></div>
+        <div id="res" class="result-box"><div id="total" class="val">-- IE</div></div>
+    </div>
+    <script>
+        function calc() {
+            const bz = parseFloat(document.getElementById('bz').value) || 0;
+            const ziel = parseFloat(document.getElementById('ziel').value) || 0;
+            const kf = parseFloat(document.getElementById('kf').value) || 0;
+            const be = parseFloat(document.getElementById('be').value) || 0;
+            const bef = parseFloat(document.getElementById('bef').value) || 0;
+            if (kf > 0 && bef > 0) {
+                document.getElementById('res').style.display = "block";
+                const total = Math.max(0, (bz - ziel) / kf) + (be * bef);
+                document.getElementById('total').innerText = total.toFixed(1) + " IE";
+            }
+        }
+    </script>
+</body>
+</html>
